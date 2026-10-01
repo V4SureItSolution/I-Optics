@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
-import logo from "./assets/logo.jpeg";
+import logo from "./assets/i-optics-icon.png";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -127,10 +127,9 @@ const Login = () => {
     <div style={styles.container}>
       <form style={styles.form} onSubmit={handleSubmit}>
         <div style={styles.logoContainer}>
-          <img src={logo} alt="Avva Inventory Logo" style={styles.logo} />
+          <img src={logo} alt="I-Optics" style={styles.logo} />
         </div>
-        <h2 style={styles.title}></h2>
-        <h2 style={styles.title}></h2>
+        <h2 style={styles.title}>I-Optics</h2>
         <p style={styles.subtitle}>Please login to continue</p>
 
         {error && <p style={styles.error}>{error}</p>}
@@ -199,19 +198,21 @@ const styles = {
   },
   title: {
     textAlign: "center",
-    marginBottom: "5px",
-    marginTop: "10px",
+    fontSize: "26px",
+    fontWeight: "800",
+    letterSpacing: "1.2px",
+    color: "#fff",
+    margin: "8px 0 6px 0",
   },
   logoContainer: {
     display: "flex",
     justifyContent: "center",
-    marginBottom: "20px",
+    marginBottom: "5px",
   },
   logo: {
-    width: "120px",
+    width: "110px",
     height: "auto",
-    borderRadius: "8px",
-    boxShadow: "0 4px 8px rgba(0,0,0,0.3)",
+    display: "block",
   },
   subtitle: {
     textAlign: "center",

@@ -80,10 +80,10 @@ const VisitBillPage = () => {
 
   // Company/Shop Details from Backend
   const [companyDetails, setCompanyDetails] = useState({
-    name: "Avva Inventory",
-    address: "No.71, M.T.H.road (Opp padi post office)",
-    city: "Padi, Chennai - 600 050",
-    phone: "98657 09626",
+    name: "I-Optics",
+    address: "#137, Broadway, (Opp. Bata Show Room)",
+    city: "Chennai - 600108",
+    phone: "044 - 25381137 / 8148959809",
     email: "",
     gst: "",
     logo: null,
@@ -187,10 +187,10 @@ const VisitBillPage = () => {
       } else {
         // Use default company details
         setCompanyDetails({
-          name: "Avva Inventory",
-          address: "No.71, M.T.H.road (Opp padi post office)",
-          city: "Padi, Chennai - 600 050",
-          phone: "98657 09626",
+          name: "I-Optics",
+          address: "#137, Broadway, (Opp. Bata Show Room)",
+          city: "Chennai - 600108",
+          phone: "044 - 25381137 / 8148959809",
           email: "",
           gst: "",
           logo: null,
@@ -202,10 +202,10 @@ const VisitBillPage = () => {
       showMessage("error", "❌ Failed to fetch company details");
       // Use default company details
       setCompanyDetails({
-        name: "Avva Inventory",
-        address: "No.71, M.T.H.road (Opp padi post office)",
-        city: "Padi, Chennai - 600 050",
-        phone: "93423 01582",
+        name: "I-Optics",
+        address: "#137, Broadway, (Opp. Bata Show Room)",
+        city: "Chennai - 600108",
+        phone: "044 - 25381137 / 8148959809",
         email: "",
         gst: "",
         logo: null,
@@ -224,10 +224,10 @@ const VisitBillPage = () => {
 
       const company = response.data;
       setCompanyDetails({
-        name: company.name || "Avva Inventory",
-        address: company.address || "No.71, M.T.H.road (Opp padi post office)",
-        city: company.city || "Padi, Chennai - 600 050",
-        phone: company.phone || "93423 01582",
+        name: company.name || "I-Optics",
+        address: company.address || "#137, Broadway, (Opp. Bata Show Room)",
+        city: company.city || "Chennai - 600108",
+        phone: company.phone || "044 - 25381137 / 8148959809",
         email: company.email || "",
         gst: company.gst_number || company.gst || "",
         logo: company.logo || null,
@@ -814,7 +814,7 @@ const VisitBillPage = () => {
       doc.setFontSize(18);
       doc.setTextColor(37, 99, 235); // #2563eb Primary Blue
       doc.setFont('helvetica', 'bold');
-      doc.text(companyDetails.name || 'Avva Inventory', 14, 18);
+      doc.text(companyDetails.name || 'I-Optics', 14, 18);
 
       doc.setFontSize(8.5);
       doc.setFont('helvetica', 'normal');
@@ -964,7 +964,7 @@ const VisitBillPage = () => {
           doc.setFont('helvetica', 'normal');
           doc.setTextColor(148, 163, 184);
           doc.text(`Page ${data.pageNumber} of ${pageCount}`, pageWidth / 2, pageHeight - 8, { align: 'center' });
-          doc.text('Avva Inventory Billing System', 14, pageHeight - 8);
+          doc.text('I-Optics Billing System', 14, pageHeight - 8);
         }
       });
 
@@ -987,7 +987,7 @@ const VisitBillPage = () => {
       if (printWindow) {
         printWindow.focus();
       } else {
-        doc.save(`Lenscraft_Bill_${bill.billNumber || 'Invoice'}.pdf`);
+        doc.save(`I-Optics_Bill_${bill.billNumber || 'Invoice'}.pdf`);
       }
     } catch (err) {
       console.error("Error generating PDF for print:", err);
@@ -2320,21 +2320,21 @@ const VisitBillPage = () => {
                   {/* Header Section */}
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', paddingBottom: '12px', marginBottom: '10px' }}>
                     {/* Left Side: Logo & Clinic Details */}
-                    <div style={{ display: 'flex', flexDirection: 'column', gap: '3px', maxWidth: '360px' }}>
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '3px', maxWidth: '380px' }}>
                       <div style={{ marginBottom: '4px' }}>
                         <img
-                          src="/lenscraft-logo.png"
-                          alt="Lenscraft"
-                          style={{ height: '56px', maxWidth: '240px', width: 'auto', display: 'block', objectFit: 'contain' }}
+                          src="/i-optics-icon.png"
+                          alt="I-OPTICS"
+                          style={{ height: '42px', width: 'auto', display: 'block', objectFit: 'contain' }}
                           onError={(e) => {
                             e.target.style.display = 'none';
                           }}
                         />
                       </div>
                       <div style={{ fontSize: '12.5px', color: '#1e293b', lineHeight: '1.4' }}>
-                        <div style={{ fontWeight: '700', fontSize: '15px', color: '#1b4374', marginBottom: '2px' }}>Lenscraft</div>
-                        #10, Baker Street, Broadway, Chennai - 600001.<br />
-                        <span style={{ fontWeight: 'bold' }}>Mobile: 9944340471</span>
+                        <div style={{ fontWeight: '700', fontSize: '16px', color: '#1b4374', marginBottom: '1px' }}>I-Optics</div>
+                        #137, Broadway, (Opp. Bata Show Room), Chennai - 600108.<br />
+                        <span style={{ fontWeight: 'bold' }}>Ph: 044 - 25381137 | Mobile: 8148959809</span>
                       </div>
                     </div>
 

@@ -96,16 +96,16 @@ export const generateBillPdfDoc = (billData = {}) => {
   doc.setFont('helvetica', 'bold');
   doc.setFontSize(13.5);
   doc.setTextColor(blueColor[0], blueColor[1], blueColor[2]);
-  doc.text('Lenscraft', leftX, curY + 11.5);
+  doc.text('I-Optics', leftX, curY + 11.5);
 
   doc.setFont('helvetica', 'normal');
-  doc.setFontSize(8.8);
+  doc.setFontSize(8.5);
   doc.setTextColor(51, 65, 85);
-  doc.text('#10, Baker Street, Broadway, Chennai - 600001.', leftX, curY + 16.8);
+  doc.text('#137, Broadway, (Opp. Bata Show Room), Chennai - 600108.', leftX, curY + 16.5);
 
   doc.setFont('helvetica', 'bold');
-  doc.setFontSize(8.8);
-  doc.text('Mobile: 9944340471', leftX, curY + 21.2);
+  doc.setFontSize(8.2);
+  doc.text('Ph: 044 - 25381137 | Mobile: 8148959809', leftX, curY + 21.0);
 
   // Right Top: Customer Information Table (Name, Mobile No, Address, DOB, Invoice No)
   const metaRightX = leftX + 96; // 109mm
@@ -482,7 +482,7 @@ export const getPublicBillUrl = (billNumber) => {
     return `${window.location.origin}/view-bill/${billNo}`;
   }
 
-  return `https://lenscraftoptical.com/view-bill/${billNo}`;
+  return `https://i-optics.com/view-bill/${billNo}`;
 };
 
 export const shareBillOnWhatsAppWithPdf = async (billData, onStatus) => {
@@ -515,7 +515,7 @@ export const shareBillOnWhatsAppWithPdf = async (billData, onStatus) => {
 
   // 1. Formatted message for WhatsApp
   let message = `Dear *${custName}*,\n` +
-    `Thank you for choosing *Lenscraft Optical Clinic*!\n\n` +
+    `Thank you for choosing *I-Optics*!\n\n` +
     `📄 *Bill Invoice No:* #${billNo}\n` +
     `📅 *Date:* ${billDate}\n` +
     `💰 *Total Amount:* ₹${total.toFixed(2)}\n` +
@@ -530,7 +530,7 @@ export const shareBillOnWhatsAppWithPdf = async (billData, onStatus) => {
     message += `\n🔗 *View / Print Official Invoice:*\n${billUrl}\n`;
   }
 
-  message += `\nBest regards,\n*Lenscraft Optical Clinic*\nBroadway, Chennai`;
+  message += `\nBest regards,\n*I-Optics*\n#137, Broadway, Chennai - 600108\nPh: 044-25381137 / 8148959809`;
 
   // 2. Open WhatsApp Web / App directly with pre-filled message & official invoice link
   const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent || '');
@@ -597,11 +597,11 @@ export const sendBirthdayWishOnWhatsApp = (customerData, onStatus) => {
   const name = customerData.name || customerData.customerName || customerData.customer_name || 'Valued Customer';
 
   const message = `🎉 *Happy Birthday, ${name}!* 🎂🎈\n\n` +
-    `Warmest birthday greetings and best wishes from the entire team at *Lenscraft Optical Clinic*! ✨\n\n` +
+    `Warmest birthday greetings and best wishes from the entire team at *I-Optics*! ✨\n\n` +
     `May your year ahead be blessed with good health, happiness, prosperity, and crystal-clear vision. 👓🌟\n\n` +
     `🎁 *Special Birthday Offer:* Visit us this month to enjoy an exclusive special Birthday benefit on your frames and lenses!\n\n` +
     `Have a wonderful celebration today! 💐\n\n` +
-    `Warm regards,\n*Lenscraft Optical Clinic*\nBroadway, Chennai`;
+    `Warm regards,\n*I-Optics*\n#137, Broadway, Chennai - 600108\nPh: 044-25381137 / 8148959809`;
 
   const encodedMessage = encodeURIComponent(message);
   const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent || '');
